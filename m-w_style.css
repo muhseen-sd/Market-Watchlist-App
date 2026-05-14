@@ -1,126 +1,157 @@
+/* Import a modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 *{
-    max-width: 100%;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Cleaner, more professional look */
 }
 
 body{
     padding: 0;
     margin: 0;
-    background-color: rgb(214, 222, 233);
-    font-family:'Courier New', Courier, monospace;
-    
+    background-color: #f0f2f5; /* Slightly lighter, cleaner grey */
+    color: #333;
 }
 
-.profit-text { color: #2ecc71; font-weight: bold; } /* The vibrant green */
-.loss-text { color: #e74c3c; font-weight: bold; } /* The vibrant red */
 
-h1{
+/* The Parent Wrapper - This controls the alignment for everything */
+.main-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the whole app */
+    padding: 2rem 0;
+}
+
+
+h1 {
     text-align: center;
-    padding-top: 3rem;
+    padding: 3rem 1rem 1rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #1a1a1a;
 }
 
-/* .s-h2{
-    padding-left: 15rem;
-} */
+/* Container for Add Asset & Watchlist */
+#add-new-asset, #watchlist_output {
+    padding: 2rem;
+    margin: 0 auto 2rem;
+    background-color: white;
+    width: 90%;           /* Mobile first: take up most of the screen */
+    max-width: 900px;     /* Desktop: don't get too wide */
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Subtle depth */
+}
 
-#form-inputs{
+#watchlist_output {
+    background-color: transparent; /* Makes list items look like separate cards */
+    box-shadow: none;
+    padding: 2rem 0;
+}
+
+#form-inputs {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    align-items: flex-end; /* Aligns button with inputs */
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
-#form-inputs button{
-    background-color: blue;
+.input-group {
+    flex: 1;
+    min-width: 200px; /* Prevents inputs from getting too squished */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
     padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb; /* Blue focus ring */
+}
+
+#form-inputs button {
+    background-color: #2563eb;
+    padding: 13px 25px;
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     border: none;
-    margin-top: 1.2rem;
     font-weight: 600;
     cursor: pointer;
+    transition: background 0.3s;
+    height: 48px; /* Matches input height */
 }
 
-#form-inputs button:hover{
-    background-color: rgb(23, 23, 158);
+#form-inputs button:hover {
+    background-color: #1d4ed8;
 }
 
-
-
-input[type = text], [type = number]{
-    padding: 12px 15px;
-    border-radius: 6px;
-}
-
-#add-new-asset{
-    padding: 2rem;
-    margin: 0 auto;
-    background-color: white;
-    width: 70%;
-    /* max-width: 1000px; */
-    border-radius: 15px;
-}
-
-#watchlist-output{
-    padding: 2rem 0;
-    margin: 0 auto;
-    width: 70%;
-
-
-}
-
-#watchlist-output ul{
+/* Watchlist Styles */
+#watchlist-container {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-#watchlist-output li{
+/* #watchlist-container li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
     background-color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     margin-bottom: 1rem;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+} */
+
+
+/* Individual List Items */
+#watchlist-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1.2rem 2.5rem; /* Matches the 2.5rem padding of the form box! */
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%; 
 }
 
+#watchlist-container li:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+}
 
+.asset-name-part { font-weight: 700; font-size: 1.1rem; }
+.buy-part, .current-part { color: #666; font-size: 0.95rem; }
 
-/* MEDIA QUERY */
+.profit-text { color: #10b981; font-weight: 700; } 
+.loss-text { color: #ef4444; font-weight: 700; }
 
-@media (max-width: 765px) {
-    *{
-        box-sizing: border-box;
-        max-width: 100%;
-    }
-
-    h1{
-        font-size: x-large;
-        padding-bottom: 1rem;
-        line-height: 1.8;
-    }
-
-    #form-inputs{
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #add-new-asset h2{
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    #watchlist-output h2{
-        text-align: center;
-    }
-
-    #watchlist-container li{
-        flex-direction: column;
+/* RESPONSIVE DESIGN (The "Mobile Magic") */
+@media (max-width: 600px) {
+    #watchlist-container li {
+        flex-direction: column; /* Stack info vertically on small screens */
         align-items: flex-start;
-        gap: 15px;
+        gap: 8px;
+        padding: 1.5rem;
     }
+    
+    #form-inputs button {
+        width: 100%; /* Full width button on mobile */
+    }
+
+    h1 { font-size: 1.5rem; }
 }

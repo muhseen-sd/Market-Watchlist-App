@@ -7,66 +7,93 @@
     <link rel="stylesheet" href="m-w_style.css">
 </head>
 <body>
-    <h1>A SIMPLE MARKET WATCHLIST</h1>
-    <!-- <h2 class="s-h2">Add New Asset</h2> -->
-    <div id="add-new-asset">
-        <h2>Add New Asset</h2>
-        <form id="form-inputs">
-            <div>
+    <div class="main-container">
+        <h1>A SIMPLE MARKET WATCHLIST</h1>
+        <!-- <h2 class="s-h2">Add New Asset</h2> -->
+        <div id="add-new-asset">
+            <h2>Add New Asset</h2>
+            <form id="form-inputs">
+
+
+                <!-- <div>
+                    <div>
+                        <label for="asset-name">Asset Name</label>
+                    </div> 
+                    <div>
+                        <input type="text" id="asset-name" placeholder="Bitcoin (BTC)" required>
+                    </div>
+                </div>
+                
                 <div>
+                    <div>
+                        <label for="buy-price">Buy Price($)</label> 
+                    </div>
+
+                    <div>
+                        <input type="number" step="0.01" id="buy-price" placeholder="10.00" required>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="current-price">Current Price</label> 
+                    </div>
+
+                    <div>
+                        <input type="number" step="0.01" id="current-price" placeholder="15.00" required>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit">Add to Watchlist</button>
+                </div> -->
+
+
+                <!-- Inside your <form id="form-inputs"> -->
+
+                <div class="input-group">
                     <label for="asset-name">Asset Name</label>
-                </div> 
-                <div>
                     <input type="text" id="asset-name" placeholder="Bitcoin (BTC)" required>
                 </div>
-            </div>
-            
-            <div>
-                <div>
-                    <label for="buy-price">Buy Price($)</label> 
-                </div>
 
-                <div>
+                <div class="input-group">
+                    <label for="buy-price">Buy Price($)</label> 
                     <input type="number" step="0.01" id="buy-price" placeholder="10.00" required>
                 </div>
-            </div>
 
-            <div>
-                <div>
+                <div class="input-group">
                     <label for="current-price">Current Price</label> 
-                </div>
-
-                <div>
                     <input type="number" step="0.01" id="current-price" placeholder="15.00" required>
                 </div>
-            </div>
 
-            <div>
                 <button type="submit">Add to Watchlist</button>
-            </div>
-        </form>
+
+
+
+            </form>
+        </div>
+
+        <div id="watchlist-output">
+            <h2>My Watchlist</h2>
+
+            <ul id="watchlist-container">
+                <li>
+                    <span class="asset-name-part">Bitcoin</span>                                  
+                    <span class="buy-part">Buy: $10.00</span>
+                    <span class="current-part">Current: $15.00</span>
+                    <span class="percentage-part profit-text">+50.00%</span>
+                </li>
+
+                <li>
+                    <span class="asset-name-part">Etherium</span>                                  
+                    <span class="buy-part">Buy: $12.00</span>
+                    <span class="current-part">Currrent: $10.00</span>
+                    <span class="percentage-part loss-text">-10.00%</span>
+                </li>
+            </ul>
+        </div>
+
     </div>
-
-    <div id="watchlist-output">
-        <h2>My Watchlist</h2>
-
-        <ul id="watchlist-container">
-            <li>
-                <span class="asset-name part">Bitcoin</span>                                  
-                <span class="buy-part">Buy: $10.00</span>
-                <span class="current-part">Current: $15.00</span>
-                <span class="percentage-part profit-text">+50.00%</span>
-            </li>
-
-            <li>
-                <span class="asset-name-part">Etherium</span>                                  
-                <span class="buy-part">Buy: $12.00</span>
-                <span class="current-part">Currrent: $10.00</span>
-                <span class="percentage-part loss-text">-10.00%</span>
-            </li>
-        </ul>
-    </div>
-
     <script src="m-w_script.js"></script>
 </body>
 </html>
