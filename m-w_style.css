@@ -1,0 +1,126 @@
+*{
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(214, 222, 233);
+    font-family:'Courier New', Courier, monospace;
+    
+}
+
+.profit-text { color: #2ecc71; font-weight: bold; } /* The vibrant green */
+.loss-text { color: #e74c3c; font-weight: bold; } /* The vibrant red */
+
+h1{
+    text-align: center;
+    padding-top: 3rem;
+}
+
+/* .s-h2{
+    padding-left: 15rem;
+} */
+
+#form-inputs{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#form-inputs button{
+    background-color: blue;
+    padding: 12px 15px;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#form-inputs button:hover{
+    background-color: rgb(23, 23, 158);
+}
+
+
+
+input[type = text], [type = number]{
+    padding: 12px 15px;
+    border-radius: 6px;
+}
+
+#add-new-asset{
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: white;
+    width: 70%;
+    /* max-width: 1000px; */
+    border-radius: 15px;
+}
+
+#watchlist-output{
+    padding: 2rem 0;
+    margin: 0 auto;
+    width: 70%;
+
+
+}
+
+#watchlist-output ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#watchlist-output li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: white;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+
+
+/* MEDIA QUERY */
+
+@media (max-width: 765px) {
+    *{
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    h1{
+        font-size: x-large;
+        padding-bottom: 1rem;
+        line-height: 1.8;
+    }
+
+    #form-inputs{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #add-new-asset h2{
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    #watchlist-output h2{
+        text-align: center;
+    }
+
+    #watchlist-container li{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
